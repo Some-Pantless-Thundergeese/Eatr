@@ -1,5 +1,4 @@
-// import jsdom from 'jsdom';
-// import fetch from 'node-fetch';
+// NOTE: THIS HELPER FUNCTON IS CURRENTLY NOT IN USE 
 
 const jsdom = require('jsdom');
 const fetch = require('node-fetch');
