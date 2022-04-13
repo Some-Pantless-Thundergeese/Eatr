@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const apiController = require('./controllers/apiController.js')
+const apiController = require('./controllers/apiController.js');
 
 // WHY ARE THEY IMPORTING???? this is express :(
 
@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 400,
-    message: {err: 'An error occurred'},
+    message: { err: 'An error occurred' },
   };
   const errorObj = Object.assign({}, defaultErr, err);
   console.log(errorObj.log);
@@ -40,4 +40,4 @@ app.use((err, req, res, next) => {
 });
 
 //Start listening on specified port
-app.listen(3000);
+module.exports = app.listen(3000);
