@@ -1,3 +1,4 @@
 node_modules
 Dist
 package-lock.json
+.DS_Store
