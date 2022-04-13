@@ -1,14 +1,20 @@
-import React, { component } from 'react';
+/*
+* Renders the app's main container
+*/
+
+import React from 'react';
 import MainContainer from './containers/MainContainer.jsx';
-import RestaurantCard from './components/RestaurantCard.jsx';
 
 const App = () => {
   return (
     <div>
       <MainContainer />
-      {/* <RestaurantCard /> */}
     </div>
   );
 };
 
 export default App;
+
+/* CHANGE LOG 
+* removed restaurantCard from import and render during cleanup
+*/

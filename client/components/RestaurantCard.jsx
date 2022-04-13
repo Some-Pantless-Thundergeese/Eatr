@@ -1,6 +1,11 @@
+/*
+* Renders the 0th element in restaurantList
+* Has some functionality for rendering favoritesList but is not a switch case
+* Gets information from the business object, does some formatting, and displays to user
+*/
+
 import React from 'react';
 import { useSelector } from 'react-redux';
-import store from '../store.js';
 
 const RestaurantCard = (props) => {
   const scene = useSelector(store => store.setScene.sceneState);
@@ -40,3 +45,7 @@ const RestaurantCard = (props) => {
 }
 
 export default RestaurantCard;
+
+/* CHANGLE LOG 
+* Removed unused store import
+*/

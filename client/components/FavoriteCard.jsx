@@ -1,5 +1,10 @@
+/*
+* Gets and formats info about business and displays it to the user
+*
+*/
+
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const FavoriteCard = (props) => {
   const business = useSelector(store => store.favs.favsList[props.index]);
@@ -22,3 +27,8 @@ const FavoriteCard = (props) => {
   );
 }
 export default FavoriteCard;
+
+/* CHANGE LOG:
+* Remove useDispatch from import, not used
+*
+*/

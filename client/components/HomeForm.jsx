@@ -1,7 +1,10 @@
+/*
+* Renders a form with location and Category input
+* 
+* 
+*/
 
 import React from 'react';
-import { useState } from 'react';
-
 
 const HomeForm = (props) => {
     return (
@@ -18,3 +21,7 @@ const HomeForm = (props) => {
 };
 
 export default HomeForm;
+
+/* CHANGELOG
+* Removed useState import, was not being used
+*/

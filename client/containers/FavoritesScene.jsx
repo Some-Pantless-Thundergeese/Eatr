@@ -1,3 +1,9 @@
+/*
+* Gets list of favorite restaurants from state
+* Creates FavoriteCard components and puts them in an array
+* Renders the card components
+*/
+
 import React from 'react';
 import { useSelector } from 'react-redux';
 import FavoriteCard from '../components/FavoriteCard.jsx';
@@ -10,9 +16,15 @@ const FavoritesScene = () => {
     favoriteCards.push(<FavoriteCard index={i} key={uniqueId} />);
   }
   return (
-    <>
-    {favoriteCards}
-    </>
+    <div id='favoriteCardsDiv'>
+      {favoriteCards}
+    </div>
   );
 }
 export default FavoritesScene;
+
+/*CHANGELOG
+* Put array of favorite cards into a div with an id
+* 
+* 
+*/
