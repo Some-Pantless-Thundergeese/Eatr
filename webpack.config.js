@@ -70,7 +70,7 @@ module.exports = {
     // }),
     new HtmlWebpackPlugin({
       title: 'Development',
-      template: 'client/index.html'
+      template: 'index.html'
     })
   ],
 };

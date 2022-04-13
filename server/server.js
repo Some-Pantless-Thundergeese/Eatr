@@ -1,33 +1,38 @@
+// ----------------------------------- Server setup -----------------------------------
 const express = require('express');
 const path = require('path');
-const apiController = require('./controllers/apiController.js');
-
-// WHY ARE THEY IMPORTING???? this is express :(
-
-// import apiController from './controllers/apiController.js';
-// import express from 'express';
-// import path from 'path';
-
 const app = express();
-
+// Parse request body
 app.use(express.json());
+// Parse request URL
 app.use(express.urlencoded({ extended: true }));
+// Serve webpack build from dist
+app.use(express.static(path.resolve(__dirname, '../dist')));
 
-//Route handlers
+
+// ------------------------------------ Require routers ------------------------------------------
+const restaurantRouter = require('./routers/restaurantRouter')
+
+
+// ------------------------------------ ROUTE HANDLERS --------------------------------------------
+
+// Serve index.html on the route '/'
 app.get('/', (req, res) => {
-  return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
+  return res.status(200).sendFile(path.join(__dirname, '../index.html'));
 });
 
-app.get('/restaurants', apiController.storeRest, (req, res) => {
-  return res.status(201).send(res.locals.restaurants);
-});
+// Route '/restaurants' through restaurantsRouter
+app.use('/restaurants', restaurantRouter)
 
-//Unknown Route Handler
+
+// -------------------------------------- Error handlers ----------------------------------------
+
+// Unknown endpoint handler
 app.get('/*', (req, res) => {
-  return res.status(404).send('404 No Food Found!');
+  return res.status(404).send('No food found!');
 });
 
-//Global Error Handler
+// Global error handler
 app.use((err, req, res, next) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
@@ -39,5 +44,5 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 
-//Start listening on specified port
-module.exports = app.listen(3000);
+// -------------------------------------- Start it up, babey! -------------------------------------
+module.exports = app.listen(3000, ()=> {console.log(`Listening on port 3000...`);});
