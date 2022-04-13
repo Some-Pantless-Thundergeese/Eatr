@@ -1,14 +1,14 @@
 // const apiSearch = require('../api');
 const express = require('express');
 // *** v v yelp api thingy 
-('use strict');
+// ('use strict');
 
 // research yelp api
 const yelp = require('yelp-fusion');
 const client = yelp.client(
   'xKtPwI4Rj7xRNlLYekgqpwlRmgtq0dUxBeYWDsbCTQhqUnqFSRluOURoDbvvXQ3G9kLWR7c3rmmNB92Ofr8cBgpy5mk4U2WdQIKWINQFGyXWG7anfSLSenMmWEFUYnYx'
 );
-const Scraper = require('../scraper.js');
+const Scraper = require('../helperFunctions/scraper.js');
 
 const apiController = {
   async storeRest(req, res, next) {
