@@ -31,7 +31,7 @@ describe('Route integration', () => {
           .expect(201);
       });
 
-      it('responds with the updated restaurant list', () => {
+      it('responds with a restaurant list', () => {
         return request(server)
           .get('/restaurants')
           .query(restaurantsList)
