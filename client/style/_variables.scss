@@ -1,13 +1,23 @@
-$primary-color: #fff;
-$primary-color-drk: #fff;
-$primary-color-lt: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap');; 
 
-$secondary-color: #fff;
-$secondary-color-drk: #fff;
-$secondary-color-lt: #fff;
+$primary-color: #F2CC8F;
+$primary-color-lt: #F4F1DE;
 
-$btn-primary: #fff;
-$btn-secondary: #fff;
+$secondary-color: #E07A5F;
+$secondary-color-lt: #d59d8d;
+
+$tertiary-color: #81B29A;
+
+$font-stack: 'Roboto', 'Roboto Condensed', sans-serif; 
+$font-RobotoC: 'Roboto Condensed', sans-serif;
+
+$btn-primary: #3D405B;
+$btn-secondary: #6E7296;
 
 $background-color: #fff;
+
+$primary-gray: #333;
+$primary-gray-lt:#9D9D9D;
+
+// $bg-image: image.url;
 

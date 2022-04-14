@@ -5,16 +5,10 @@
 */
 
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 const RestaurantCard = (props) => {
-  const scene = useSelector(store => store.setScene.sceneState);
-  const isLoading = useSelector(store => store.restaurants.restaurantList.length === 0);
-  let business;
-  //If the scene is favorites, display the info for the restaurant at the current index of the favsList array
-  if (scene === 'favorites') business = useSelector(store => store.favs.favsList[props.index]);
-  //otherwise display whatever is the first restaurant in the restaurantsList array
-  else business = useSelector(store => store.restaurants.restaurantList[0]);
+  const isLoading = props.isLoading;
+  const business = props.business;
   
   switch(isLoading) {
     case true:
@@ -48,4 +42,7 @@ export default RestaurantCard;
 
 /* CHANGLE LOG 
 * Removed unused store import
+* Removed scene state from the card, not used or needed as scene is always Feed for this card
+* Removed conditional whereby business for this card was determined by scene, for same reason as above
+* Pulled isLoading and current business state up to Feed Scene, to be passed down via props
 */
