@@ -11,7 +11,8 @@ import { useSelector } from 'react-redux';
 
 const FeedScene = () => {
   const currBusiness = useSelector(store => store.restaurants.restaurantList[0]);
-  const isLoading = useSelector(store => store.restaurants.restaurantList.length === 0);
+  const restaurantsEmpty = useSelector(store => store.restaurants.restaurantList.length === 0);
+  const favsExist = useSelector(store => store.favs.favsList.length > 0);
 
   const dispatch = useDispatch();
 
@@ -25,14 +26,23 @@ const FeedScene = () => {
     //dispatch action to get next restaurant
     dispatch(getNextActionCreator());
   }
-    // render a restaurant card, and dislike and like buttons
-    return (
-        <div id='restaurantCardDiv'>
-          <RestaurantCard business={currBusiness} isLoading={isLoading} />
-          <button onClick={handleClick} id='dislike'>X</button>
-          <button onClick={handleClick} id='like'>✓</button>        
-        </div>
-    )
+
+  let feedSwitch;
+
+  if (restaurantsEmpty && !favsExist) {
+    feedSwitch = <p>Loading your Restaurant Options! Please wait...</p>
+  } else if (!restaurantsEmpty) {
+    feedSwitch = (
+    <div id='restaurantCardDiv'>
+      <RestaurantCard business={currBusiness} />
+      <button onClick={handleClick} id='dislike'>X</button>
+      <button onClick={handleClick} id='like'>✓</button>        
+    </div>)
+  } else if (restaurantsEmpty && favsExist) {
+    feedSwitch = <p>Ready to view your results! Please click the Favorites button</p>
+  }
+
+  return feedSwitch;
 }
 
 export default FeedScene;
