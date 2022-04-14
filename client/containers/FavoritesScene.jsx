@@ -13,7 +13,7 @@ const FavoritesScene = () => {
   let favoriteCards = [];
   for (let i = 0; i < favsList.length; i++) {
     const uniqueId = 'favorite' + favsList[i].id;
-    favoriteCards.push(<FavoriteCard index={i} key={uniqueId} />);
+    favoriteCards.push(<FavoriteCard index={i} key={uniqueId} businessInfo={favsList[i]} />);
   }
   return (
     <div id='favoriteCardsDiv'>
@@ -25,6 +25,6 @@ export default FavoritesScene;
 
 /*CHANGELOG
 * Put array of favorite cards into a div with an id
-* 
+* Pulled state up to this level by businessInfo prop to FavoriteCard components to pass down the Yelp API business object
 * 
 */

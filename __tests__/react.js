@@ -19,8 +19,9 @@ describe('Unit testing React presentational components', () => {
     //TODO
     // Testing formatted address?
     //mock state business{name,location,phone,imgURL}    
+    let card;
     const props = {
-      business: {
+      businessInfo: {
         id: 'zj8Lq1T8KIC5zwFief15jg',
         alias: 'prince-street-pizza-new-york-2',
         name: 'Prince Street Pizza',
@@ -73,18 +74,36 @@ describe('Unit testing React presentational components', () => {
           }
         ]
       }
-    }
+    };
+
     //beforeAll/beforeEach if necessary
-    //test a,b,c
-  })
+    beforeAll(() => {
+      card = render(<FavoriteCard {...props} />);      
+    });
+
+    test('Renders a business card with the correct information', () => {      
+      // A business should display an image in an <img>, business name in an <h3>, 
+      // formatted address in a <p> and formatted phone in an <a>
+      expect(card.getByRole('img')).toBeVisible() //image
+      expect(card.getByRole('img')).toHaveAttribute('src', 'https://s3-media3.fl.yelpcdn.com/bphoto/ZAukOyv530w4KjOHC5YY1w/o.jpg') //image
+      expect(card.getByRole('img')).toHaveAttribute('alt', `restaurant's main photo`); //image
+      expect(card.getByRole('heading')).toHaveTextContent('Prince Street Pizza'); //businessName
+      expect(((card.getByRole('heading').nextSibling).firstChild).firstChild).toHaveTextContent('27 Prince St'); //formatted address
+      expect(((card.getByRole('heading').nextSibling).firstChild).firstChild.nextSibling.nextSibling).toHaveTextContent('New York, NY 10012'); //formatted address
+      expect(((card.getByRole('heading').nextSibling).firstChild).nextSibling).toHaveTextContent('(212) 966-4100') //formatted phone   
+    });
+  });
+
+  // *** HomeForm
+  describe('HomeForm', () => {
+    //TODO
+  });
+
 // *** Header
   describe('Header', () => {
     //TODO
   });
-// *** HomeForm
-  describe('HomeForm', () => {
-    //TODO
-  });
+
 // *** RestaurantCard
   describe('RestaurantCard', () => {
     //TODO
