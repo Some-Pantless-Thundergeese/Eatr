@@ -44,7 +44,7 @@ const hoursController = {
     
     // ------------------ Error handling ------------------------
     catch (error) {
-      console.log(error);
+      // console.log(error);
       return next({
         log: `Error caught in hoursController.storeRest middleware ${error}`,
         message: {
