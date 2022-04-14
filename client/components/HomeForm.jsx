@@ -10,19 +10,17 @@ const HomeForm = (props) => {
     return (
         <div className="home-form">
             <form>
-                <label htmlFor="location">
+                <label className="form-text" htmlFor="location">
                   Location: 
                 </label>
-                <br></br>
 
                 <input type="text" id="location" name='location' onChange={props.updateRequestInfo} placeholder="Enter your city or zip here" alt="locationField">
                 </input>
                 <br></br>
 
-                <label htmlFor="category">
+                <label className="form-text" htmlFor="category">
                   Category:
                 </label>
-                <br></br>
 
                 <input type="text" id="category" name='category' onChange={props.updateRequestInfo} placeholder="Whatcha hungry fa?" alt="categoryField">
                 </input>

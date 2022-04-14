@@ -10,7 +10,8 @@
 body {
   font-family: $font-stack;
   line-height: 1.6;
-  background-color: $background-color;
+  background-color: $primary-color;
+  color: $primary-gray;
 }
 
 a {
@@ -20,6 +21,20 @@ a {
 
 img {
   width: 100%;
+}
+
+.btn {
+  background-color: $secondary-color;
+  border-radius: 0.5rem;
+  color: $background-color;
+  font-family: $font-stack;
+  margin: 20px 0 10px 0;
+  padding: 10px 10px;
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  &:hover {
+    background-color: $secondary-color-lt;
+  }
 }
 
 // Main contianer
@@ -35,35 +50,67 @@ img {
 // Header
 #headerContainer {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 40px;
 }
 
+// holds the header which holds the h1
 #homepageHeader {
   display: flex;
+
   h1 {
     font-family: $font-RobotoC;
     font-size: 60px;
-    margin: 20px 0;
+    margin-bottom: 30px;
+    text-align: center;
+    
   }
-
-
 }
-
+// home scene container holds the homeform
 #homeSceneContainer{
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10px;
+  padding: 20px 40px;
+  background-color: $primary-color-lt;
+  border: 1px solid $primary-gray-lt;
+  border-radius: 0.5rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+// homeform holds the category and location form with submit button
 .home-form {
-  #category {
+  display: flex;
+  margin: 0;
 
+  label{
+    display: block;
+    text-align: center;
+  }
+
+  #category {
+    padding: 10px 10px;
+    width: 200px;
+    border-radius: 0.5rem;
+    border: 1px solid $primary-gray-lt;
+   
   }
 
   #location {
-
+    padding: 10px 10px;
+    width: 200px;
+    border-radius: 0.5rem;
+    border: 1px solid $primary-gray-lt;
+  }
+  
+  .form-text {
+    display: flex;
+    margin: 20px 0 5px 0;
   }
 
-  .btn {
-
-  }
 }
 //
 // homeFormContainer
@@ -91,58 +138,58 @@ img {
 // }
 
 
-.center {
-  display: flex;
-  justify-content: center;
-}
-.drop-down {
-  margin-top: 5em;
+// .center {
+//   display: flex;
+//   justify-content: center;
+// }
+// .drop-down {
+//   margin-top: 5em;
 
-  form {
-    text-align: center;
-    font-size: 2rem;
-  }
-}
+//   form {
+//     text-align: center;
+//     font-size: 2rem;
+//   }
+// }
 
-input {
-  padding: 0.8rem 1rem;
-  border: 1px solid #a7a5a5;
-  border-radius: 0.5rem;
-  width: 20%;
-  margin-left: 20px;
-}
+// input {
+//   padding: 0.8rem 1rem;
+//   border: 1px solid #a7a5a5;
+//   border-radius: 0.5rem;
+//   width: 20%;
+//   margin-left: 20px;
+// }
 
 /* .food {
   object-fit: cover;
 } */
 
-.btn-container {
-  text-align: center;
-}
+// .btn-container {
+//   text-align: center;
+// }
 
-.btn-restaurants {
-  margin-top: 1.5rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 0.6rem;
-  height: 5rem;
-  width: 15rem;
-  color: white;
-  background: #1f9b1f;
+// .btn-restaurants {
+//   margin-top: 1.5rem;
+//   cursor: pointer;
+//   border: none;
+//   border-radius: 0.6rem;
+//   height: 5rem;
+//   width: 15rem;
+//   color: white;
+//   background: #1f9b1f;
 
-  :hover {
-    background: #1b831b;
-    transform: translateY(4px);
-  }
+//   :hover {
+//     background: #1b831b;
+//     transform: translateY(4px);
+//   }
 
-  .desktop {
-    display: none;
-  }
+//   .desktop {
+//     display: none;
+//   }
 
-  .mobile {
-    display: inline-block;
-  }
-}
+//   .mobile {
+//     display: inline-block;
+//   }
+// }
 
 
 
