@@ -1,9 +1,9 @@
 import * as types from '../constants/actionTypes.js';
 
-/* 
-* Reducer used to update restaurant lists used to display
-* restaurant cards to the user in the feed scene
-*/
+/*
+ * Reducer used to update restaurant lists used to display
+ * restaurant cards to the user in the feed scene
+ */
 
 const initState = {
   restaurantList: [],
@@ -27,8 +27,8 @@ const restaurantsReducer = (state = initState, action) => {
         ...state,
         restaurantList,
       };
-    }  
-    // ***App will call this reducer repeatedly to ensure that the next restaurant to show is 
+    }
+    // ***App will call this reducer repeatedly to ensure that the next restaurant to show is
     // *** ... the first restaurant in restaurant list
     // ***offset?? instead of slicing -- moving through array by incrementing offset?
     case types.GET_NEXT: {
