@@ -26,14 +26,10 @@ const HomeForm = (props) => {
                 </input>
                 <br></br>
 
-<<<<<<< HEAD
                 <button className="btn" type="submit" value="Submit" id="submit" disabled={props.disableSubmit} onClick={props.submitRestaurantRequest} alt="Submit Your Request" >
                     Submit
-=======
-                <button className="btn" type="submit" value="Submit" id="submit" disabled={props.disableSubmit} onClick={props.submitRestuarantRequest}>
-                  Submit
->>>>>>> dev
                 </button>
+                
             </form>
         </div>
     );
