@@ -1,8 +1,8 @@
-import favsReducer from "../client/reducers/favsReducer";
-import restaurantsReducer from "../client/reducers/restaurantsReducer";
-import setSceneReducer from "../client/reducers/setSceneReducer";
+import favsReducer from '../client/reducers/favsReducer';
+import restaurantsReducer from '../client/reducers/restaurantsReducer';
+import setSceneReducer from '../client/reducers/setSceneReducer';
 
-describe('Favorites reducer',()=>{
+describe('Favorites reducer', () => {
   let state;
 
   beforeEach(() => {
@@ -16,21 +16,20 @@ describe('Favorites reducer',()=>{
       expect(favsReducer(undefined, { type: undefined })).toEqual(state);
     });
   });
-  
+
   describe('unrecognized action types', () => {
     it('should return the original without any duplication', () => {
       const action = { type: 'yeehaw' };
       expect(favsReducer(state, action)).toBe(state);
     });
   });
+});
 
-})
-
-
-
-describe( 'Restaurants reducer', () => {
+// Restaurants reducer test
+describe('Restaurants reducer', () => {
   let state;
-  
+
+  // matching original state
   beforeEach(() => {
     state = {
       restaurantList: [],
@@ -54,11 +53,9 @@ describe( 'Restaurants reducer', () => {
       expect(restaurantsReducer(state, action)).toBe(state);
     });
   });
-  
 });
 
-
-describe( 'SetScene reducer', () => {
+describe('SetScene reducer', () => {
   let state;
 
   beforeEach(() => {
@@ -79,5 +76,4 @@ describe( 'SetScene reducer', () => {
       expect(setSceneReducer(state, action)).toBe(state);
     });
   });
-
 });
