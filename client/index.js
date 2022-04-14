@@ -19,29 +19,3 @@ root.render(
     <App />
   </Provider>
 );
-
-// root.render(
-
-//     <App tab="home" />
-
-// );
-
-/*
-
-
-import React from 'react';
-import { render, createRoot } from 'react-dom';
-import { Provider } from 'react-redux';
-import App from './App.jsx';
-import store from './store';
-
-const root = createRoot(document.getElementById('contents'));
-
-root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
-
-
-*/

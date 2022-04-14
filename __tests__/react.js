@@ -97,6 +97,39 @@ describe('Unit testing React presentational components', () => {
   // *** HomeForm
   describe('HomeForm', () => {
     //TODO
+      //initialize form
+      //set props object to mock data
+    let form;
+    const props = {
+      submitRestaurantRequest: jest.fn() 
+    };
+
+    //beforeall render a homeform passing in props
+    beforeAll(() => {
+      form = render(<HomeForm {...props}/>);
+    });
+    
+    //test
+    //expect label to have location text
+      //expect input type?
+      //expect category to have category text
+      //expect input type
+    test('Renders text and text input field for location and category', () => {
+      //label elements do not have implicit roles and assinging roles is not permitted
+      expect(form.getByLabelText('location')).toHaveTextContent('Location:');
+      expect(form.getByLabelText('location').nextSibling).toHaveAttribute('id', 'location');
+      expect(form.getByLabelText('category')).toHaveTextContent('Category:');
+      expect(form.getByLabelText('category').nextSibling).toHaveAttribute('id', 'category');
+    });
+
+    // Expect button to render with submit text
+    // expect onClick event handler to...
+    test('Renders a button with submit text and handles submit functionality', () => {
+      const submitButton = form.getByText('Submit');
+      userEvent.click(submitButton);
+      expect(props.submitRestaurantRequest).toHaveBeenCalledTimes(1);
+    });
+    
   });
 
 // *** Header
