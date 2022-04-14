@@ -26,8 +26,9 @@ const HomeForm = (props) => {
                 </input>
                 <br></br>
 
-                <input className="btn" type="submit" value="Submit" id="submit" disabled={props.disableSubmit} onClick={props.submitRestuarantRequest}>
-                </input>
+                <button className="btn" type="submit" value="Submit" id="submit" disabled={props.disableSubmit} onClick={props.submitRestuarantRequest}>
+                  Submit
+                </button>
             </form>
         </div>
     );

@@ -37,6 +37,10 @@ img {
   }
 }
 
+input:focus {
+  outline:none;
+}
+
 // Main contianer
 #mainContainerDiv {
   display: flex;
