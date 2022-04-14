@@ -62,13 +62,21 @@ input:focus {
 // holds the header which holds the h1
 #homepageHeader {
   display: flex;
+  flex-direction: column;
 
   h1 {
+    display: flex;
     font-family: $font-RobotoC;
     font-size: 60px;
     margin-bottom: 30px;
     text-align: center;
     
+  }
+
+  .feedHeaderDiv {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
   }
 }
 // home scene container holds the homeform
@@ -82,7 +90,7 @@ input:focus {
   background-color: $primary-color-lt;
   border: 1px solid $primary-gray-lt;
   border-radius: 0.5rem;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 // homeform holds the category and location form with submit button
@@ -114,8 +122,93 @@ input:focus {
     display: flex;
     margin: 20px 0 5px 0;
   }
+}
+
+#restaurantCardDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 10px;
+  padding: 20px 40px;
+  background-color: $primary-color-lt;
+  border: 1px solid $primary-gray-lt;
+  border-radius: 0.5rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 5px;
+    width: 600px;
+  }
+}
+#restaurant-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
+
+#dislike {
+  background-color: $secondary-color;
+  border-radius: 0.5rem;
+  color: $background-color;
+  font-family: $font-stack;
+  margin: 20px 0 10px 0;
+  padding: 10px 10px;
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  &:hover {
+    background-color: $secondary-color-lt;
+  }
+}
+
+#like {
+  background-color: $tertiary-color;
+  border-radius: 0.5rem;
+  color: $background-color;
+  font-family: $font-stack;
+  margin: 20px 0 10px 0;
+  padding: 10px 10px;
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  &:hover {
+    background-color: $tertiary-color-lt;
+  }
+}
+
+#favoriteCardsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .favorite-card {
+    width: 80%;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      height: 400px;
+      width: 100%;
+      margin-bottom: 10px;
+      border-radius: 15px;
+    }
+    .favorites-business-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
 //
 // homeFormContainer
 //scenes

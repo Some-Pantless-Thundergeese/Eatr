@@ -32,8 +32,10 @@ const Header = (props) => {
         return (
           <div id="homepageHeader" className="feedHeaderDiv">
             <h1>Eatr</h1>
-            <button id="back" onClick={props.onClick}>Back</button>
-            <button id="favorites" disabled={hideFavorites} onClick={props.onClick}>Favorites</button>
+            <div className="btns">
+              <button id="back" onClick={props.onClick}>Back</button>
+              <button id="favorites" disabled={hideFavorites} onClick={props.onClick}>Favorites</button>
+            </div>
           </div>
         );
       case 'favorites':

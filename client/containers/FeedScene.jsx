@@ -35,8 +35,10 @@ const FeedScene = () => {
     feedSwitch = (
     <div id='restaurantCardDiv'>
       <RestaurantCard business={currBusiness} />
-      <button onClick={handleClick} id='dislike'>X</button>
-      <button onClick={handleClick} id='like'>✓</button>        
+      <div className="btns">
+        <button onClick={handleClick} id='dislike'>X</button>
+        <button onClick={handleClick} id='like'>✓</button>     
+      </div>
     </div>)
   } else if (restaurantsEmpty && favsExist) {
     feedSwitch = <p>Ready to view your results! Please click the Favorites button</p>
