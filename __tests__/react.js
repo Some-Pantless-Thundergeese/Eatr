@@ -2,7 +2,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import userEvent from '@testing-library/user-event';
-import { render, screen, waitFor } from '@testing-library/react';
+import { getByLabelText, render, screen, waitFor } from '@testing-library/react';
 import regeneratorRuntime from 'regenerator-runtime'; //necessary?
 
 //import 
@@ -101,11 +101,13 @@ describe('Unit testing React presentational components', () => {
       //set props object to mock data
     let form;
     const props = {
-      submitRestaurantRequest: jest.fn() 
+      updateRequestInfo: jest.fn(),
+      disableSubmit: false,
+      submitRestaurantRequest: jest.fn(),
     };
 
     //beforeall render a homeform passing in props
-    beforeAll(() => {
+    beforeEach(() => {
       form = render(<HomeForm {...props}/>);
     });
     
@@ -116,20 +118,27 @@ describe('Unit testing React presentational components', () => {
       //expect input type
     test('Renders text and text input field for location and category', () => {
       //label elements do not have implicit roles and assinging roles is not permitted
-      expect(form.getByLabelText('location')).toHaveTextContent('Location:');
-      expect(form.getByLabelText('location').nextSibling).toHaveAttribute('id', 'location');
-      expect(form.getByLabelText('category')).toHaveTextContent('Category:');
-      expect(form.getByLabelText('category').nextSibling).toHaveAttribute('id', 'category');
+      // form.debug(form.getByLabelText('Location:'));
+      expect(form.getByLabelText('Location:').previousSibling).toHaveTextContent('Location:');
+      expect(form.getByLabelText('Location:')).toHaveAttribute('id', 'location');
+      expect(form.getByLabelText('Category:').previousSibling).toHaveTextContent('Category:');
+      expect(form.getByLabelText('Category:')).toHaveAttribute('id', 'category');
     });
 
     // Expect button to render with submit text
     // expect onClick event handler to...
     test('Renders a button with submit text and handles submit functionality', () => {
-      const submitButton = form.getByText('Submit');
+      const submitButton = form.getByRole('button');
+      form.debug(submitButton);
       userEvent.click(submitButton);
       expect(props.submitRestaurantRequest).toHaveBeenCalledTimes(1);
     });
     
+    // market.findAllByRole('button')
+    //     .then((buttons) => {console.log('buttons', buttons)
+    //       expect(buttons).toHaveLength(2)
+    //     });
+
   });
 
 // *** Header

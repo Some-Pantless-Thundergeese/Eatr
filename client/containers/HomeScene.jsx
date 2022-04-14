@@ -46,7 +46,7 @@ const HomeScene = (props) => {
   return (
      // HomeForm houses the first form you see when you load the page that contains the search for type and location
       <div id='homeFormContainer'>
-        <HomeForm submitRestuarantRequest={handleRequestSubmission} updateRequestInfo={updateRequest} disableSubmit={disableSubmit} />
+        <HomeForm submitRestaurantRequest={handleRequestSubmission} updateRequestInfo={updateRequest} disableSubmit={disableSubmit} />
       </div>
   )
 
