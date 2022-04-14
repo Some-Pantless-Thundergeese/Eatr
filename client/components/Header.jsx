@@ -23,6 +23,7 @@ const Header = (props) => {
   const scene = useSelector(store => store.setScene.sceneState);
   // *** hideFavorites evaluates to true until length > 4
   const hideFavorites = useSelector(store => store.favs.favsList.length < 4);
+  // switches happen when you 
     switch (scene) {
       case 'feed':
         return (
